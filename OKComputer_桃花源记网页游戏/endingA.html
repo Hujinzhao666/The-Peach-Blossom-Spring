@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桃花源记 - 坚守承诺</title>
+    <link rel="stylesheet" href="styles/ending.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="ending-a">
+    <div class="ending-container">
+        <div class="ending-background"></div>
+        
+        <div class="ending-content">
+            <div class="ending-header">
+                <h1 class="ending-title">坚守承诺，心归桃源</h1>
+                <div class="ending-subtitle">Branch A - The Path of Honor</div>
+            </div>
+            
+            <div class="ending-scene">
+                <div class="scene-image">
+                    <img src="resources/endingA_peaceful.png" alt="宁静的小桃林" class="scene-img">
+                </div>
+                
+                <div class="scene-narration">
+                    <p class="narration-text">
+                        渔人驾筏出溶洞，刻意毁掉标记，逆流返回。到家后，拒绝邻里追问，每日耕作之余常望桃林方向，面带平和。
+                    </p>
+                    
+                    <p class="narration-text">
+                        数年后，渔人年老，再次驾筏沿溪而行，虽未找到原溶洞，却在溪边发现一片小桃林，林中隐约有屋舍轮廓，渔人含笑走入。
+                    </p>
+                </div>
+                
+                <div class="scene-dialogue">
+                    <div class="dialogue-box">
+                        <p class="dialogue-text">
+                            心有坚守，便不惧路远。桃源不在别处，在守诺之人的眼底，在安宁之心的深处。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ending-message">
+                <div class="message-box">
+                    <h2>守诺者，自成桃源。</h2>
+                    <p>真正的桃花源，存在于每个坚守承诺、内心安宁的人心中。</p>
+                </div>
+            </div>
+            
+            <div class="ending-controls">
+                <button class="btn btn-primary" onclick="restartGame()">重新开始</button>
+                <button class="btn btn-secondary" onclick="backToTitle()">返回标题</button>
+            </div>
+        </div>
+        
+        <div class="ending-effects">
+            <div class="petal-falling"></div>
+            <div class="petal-falling"></div>
+            <div class="petal-falling"></div>
+            <div class="petal-falling"></div>
+            <div class="petal-falling"></div>
+        </div>
+    </div>
+    
+    <script>
+        function restartGame() {
+            window.location.href = 'index.html';
+        }
+        
+        function backToTitle() {
+            window.location.href = 'index.html';
+        }
+        
+        // 添加飘落花瓣动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const petals = document.querySelectorAll('.petal-falling');
+            petals.forEach((petal, index) => {
+                petal.style.animationDelay = `${index * 0.5}s`;
+                petal.style.left = `${Math.random() * 100}%`;
+            });
+        });
+    </script>
+</body>
+</html>

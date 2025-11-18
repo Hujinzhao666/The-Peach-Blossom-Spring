@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桃花源记 - 泄露秘密</title>
+    <link rel="stylesheet" href="styles/ending.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="ending-b">
+    <div class="ending-container">
+        <div class="ending-background"></div>
+        
+        <div class="ending-content">
+            <div class="ending-header">
+                <h1 class="ending-title">泄露秘密，桃源消散</h1>
+                <div class="ending-subtitle">Branch B - The Path of Greed</div>
+            </div>
+            
+            <div class="ending-scene">
+                <div class="scene-image">
+                    <img src="resources/endingB_barren.png" alt="荒芜的山地" class="scene-img">
+                </div>
+                
+                <div class="scene-narration">
+                    <p class="narration-text">
+                        渔人驾筏出溶洞，密集标记路径，回家后立刻拜见太守。太守大喜，派兵随其前往。
+                    </p>
+                    
+                    <p class="narration-text">
+                        众人按标记寻找，却见桃林枯萎、溶洞崩塌，世外桃源变为荒芜山地，村民踪迹全无，只剩几片枯萎桃花瓣飘散。
+                    </p>
+                </div>
+                
+                <div class="scene-dialogue">
+                    <div class="dialogue-character">
+                        <span class="character-name">太守</span>
+                        <p class="dialogue-text">你竟敢欺瞒本官！这荒山野岭哪有仙境？</p>
+                    </div>
+                    
+                    <div class="dialogue-character">
+                        <span class="character-name">渔人</span>
+                        <p class="dialogue-text">不可能！我昨日还在此处……</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ending-message">
+                <div class="message-box">
+                    <h2>失诺者，桃源永失。</h2>
+                    <p>利欲熏心，破诺失信，仙境因人心而现，亦因人心而灭。</p>
+                </div>
+            </div>
+            
+            <div class="ending-controls">
+                <button class="btn btn-primary" onclick="restartGame()">重新开始</button>
+                <button class="btn btn-secondary" onclick="backToTitle()">返回标题</button>
+            </div>
+        </div>
+        
+        <div class="ending-effects">
+            <div class="withered-petal"></div>
+            <div class="withered-petal"></div>
+            <div class="withered-petal"></div>
+            <div class="withered-petal"></div>
+            <div class="withered-petal"></div>
+        </div>
+    </div>
+    
+    <script>
+        function restartGame() {
+            window.location.href = 'index.html';
+        }
+        
+        function backToTitle() {
+            window.location.href = 'index.html';
+        }
+        
+        // 添加枯萎花瓣飘落动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const petals = document.querySelectorAll('.withered-petal');
+            petals.forEach((petal, index) => {
+                petal.style.animationDelay = `${index * 0.8}s`;
+                petal.style.left = `${Math.random() * 100}%`;
+            });
+        });
+    </script>
+</body>
+</html>

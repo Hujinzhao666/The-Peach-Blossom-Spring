@@ -1,0 +1,420 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Serif SC', serif;
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+}
+
+/* 结局容器 */
+.ending-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ending-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+/* 分支A - 坚守承诺 */
+.ending-a .ending-background {
+    background: linear-gradient(rgba(255, 182, 193, 0.3), rgba(255, 218, 185, 0.5)), 
+                url('../resources/endingA_peaceful.png');
+}
+
+/* 分支B - 泄露秘密 */
+.ending-b .ending-background {
+    background: linear-gradient(rgba(139, 69, 19, 0.4), rgba(105, 105, 105, 0.6)), 
+                url('../resources/endingB_barren.png');
+}
+
+/* 分支C - 疑窦丛生 */
+.ending-c .ending-background {
+    background: linear-gradient(rgba(25, 25, 112, 0.5), rgba(0, 0, 0, 0.8)), 
+                url('../resources/endingC_death.png');
+}
+
+/* 结局内容 */
+.ending-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+}
+
+/* 标题样式 */
+.ending-header {
+    margin-bottom: 30px;
+}
+
+.ending-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.ending-a .ending-title {
+    color: #ff9a9e;
+}
+
+.ending-b .ending-title {
+    color: #d2691e;
+}
+
+.ending-c .ending-title {
+    color: #9370db;
+}
+
+.ending-subtitle {
+    font-size: 1rem;
+    opacity: 0.8;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.ending-a .ending-subtitle {
+    color: #fff;
+}
+
+.ending-b .ending-subtitle {
+    color: #f0f0f0;
+}
+
+.ending-c .ending-subtitle {
+    color: #e0e0e0;
+}
+
+/* 场景样式 */
+.ending-scene {
+    margin-bottom: 40px;
+}
+
+.scene-image {
+    margin-bottom: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.scene-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.scene-narration {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.narration-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.ending-a .narration-text {
+    color: #fff;
+}
+
+.ending-b .narration-text {
+    color: #f0f0f0;
+}
+
+.ending-c .narration-text {
+    color: #e0e0e0;
+}
+
+/* 对话样式 */
+.scene-dialogue {
+    margin-bottom: 30px;
+}
+
+.dialogue-box {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.dialogue-box.dark {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(147, 112, 219, 0.5);
+}
+
+.dialogue-character {
+    margin-bottom: 20px;
+}
+
+.character-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.ending-a .character-name {
+    color: #ff9a9e;
+}
+
+.ending-b .character-name {
+    color: #d2691e;
+}
+
+.ending-c .character-name {
+    color: #9370db;
+}
+
+.dialogue-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.ending-a .dialogue-text {
+    color: #fff;
+}
+
+.ending-b .dialogue-text {
+    color: #f0f0f0;
+}
+
+.ending-c .dialogue-text {
+    color: #e0e0e0;
+}
+
+/* 结局信息 */
+.ending-message {
+    margin-bottom: 40px;
+}
+
+.message-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 154, 158, 0.5);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+}
+
+.message-box.dark {
+    border-color: rgba(147, 112, 219, 0.5);
+}
+
+.message-box h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.ending-a .message-box h2 {
+    color: #ff9a9e;
+}
+
+.ending-b .message-box h2 {
+    color: #d2691e;
+}
+
+.ending-c .message-box h2 {
+    color: #9370db;
+}
+
+.message-box p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.ending-a .message-box p {
+    color: #fff;
+}
+
+.ending-b .message-box p {
+    color: #f0f0f0;
+}
+
+.ending-c .message-box p {
+    color: #e0e0e0;
+}
+
+/* 控制按钮 */
+.ending-controls {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    color: #333;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 154, 158, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+/* 特效样式 */
+.ending-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* 分支A特效 - 飘落花瓣 */
+.petal-falling {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ffb3ba;
+    border-radius: 50% 0 50% 0;
+    animation: petalFall 8s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes petalFall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 分支B特效 - 枯萎花瓣 */
+.withered-petal {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #8b4513;
+    border-radius: 50% 0 50% 0;
+    animation: witheredFall 10s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes witheredFall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.5;
+    }
+    85% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* 分支C特效 - 阴雾 */
+.dark-fog {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background: radial-gradient(ellipse, rgba(25, 25, 112, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: fogMove 15s ease-in-out infinite;
+}
+
+@keyframes fogMove {
+    0%, 100% {
+        transform: translateX(-100px) translateY(0px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(50vw) translateY(20vh);
+        opacity: 0.6;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .ending-content {
+        padding: 30px 20px;
+        width: 95%;
+    }
+    
+    .ending-title {
+        font-size: 2rem;
+    }
+    
+    .scene-img {
+        height: 200px;
+    }
+    
+    .ending-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}

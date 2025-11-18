@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桃花源记 - 互动游戏</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <!-- 游戏背景 -->
+        <div id="game-background" class="background"></div>
+        
+        <!-- 隐藏特效层 -->
+        <div id="effect-layer" class="effect-layer hidden"></div>
+        
+        <!-- 游戏主界面 -->
+        <div id="game-ui" class="game-ui">
+            <!-- 标题界面 -->
+            <div id="title-screen" class="screen active">
+                <div class="title-content">
+                    <h1 class="game-title">桃花源记</h1>
+                    <p class="game-subtitle">一个关于选择与宿命的互动故事</p>
+                    <div class="title-buttons">
+                        <button id="start-game" class="btn btn-primary">开始游戏</button>
+                        <button id="load-game" class="btn btn-secondary">继续游戏</button>
+                        <button id="settings" class="btn btn-secondary">设置</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 游戏主界面 -->
+            <div id="main-game" class="screen">
+                <!-- 场景内容区 -->
+                <div id="scene-content" class="scene-content">
+                    <div id="narration-box" class="narration-box hidden">
+                        <p id="narration-text" class="narration-text"></p>
+                    </div>
+                    
+                    <div id="dialogue-box" class="dialogue-box hidden">
+                        <div id="character-info" class="character-info">
+                            <span id="character-name" class="character-name"></span>
+                        </div>
+                        <p id="dialogue-text" class="dialogue-text"></p>
+                        <div class="dialogue-controls">
+                            <button id="continue-btn" class="continue-btn">继续</button>
+                        </div>
+                    </div>
+                    
+                    <div id="choice-box" class="choice-box hidden">
+                        <h3 class="choice-title">请做出选择</h3>
+                        <div id="choices" class="choices"></div>
+                    </div>
+                </div>
+                
+                <!-- 互动区域 -->
+                <div id="interaction-area" class="interaction-area">
+                    <div id="clickable-objects" class="clickable-objects"></div>
+                </div>
+                
+                <!-- 状态栏 -->
+                <div id="status-bar" class="status-bar">
+                    <div class="hidden-triggers">
+                        <span id="withered-count" class="trigger-counter">枯萎花瓣: 0/3</span>
+                        <span id="suspicion-level" class="trigger-counter">疑心值: 0</span>
+                    </div>
+                    <div class="game-controls">
+                        <button id="save-game" class="control-btn">存档</button>
+                        <button id="load-game-btn" class="control-btn">读档</button>
+                        <button id="skip-text" class="control-btn">跳过</button>
+                        <button id="auto-mode" class="control-btn">自动</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 设置界面 -->
+            <div id="settings-screen" class="screen">
+                <div class="settings-content">
+                    <h2>游戏设置</h2>
+                    <div class="setting-group">
+                        <label>文本速度</label>
+                        <input type="range" id="text-speed" min="1" max="5" value="3">
+                    </div>
+                    <div class="setting-group">
+                        <label>背景音乐</label>
+                        <input type="range" id="bgm-volume" min="0" max="100" value="70">
+                    </div>
+                    <div class="setting-group">
+                        <label>音效音量</label>
+                        <input type="range" id="sfx-volume" min="0" max="100" value="80">
+                    </div>
+                    <button id="back-to-title" class="btn btn-secondary">返回</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 加载界面 -->
+        <div id="loading-screen" class="loading-screen hidden">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">正在加载桃花源...</p>
+            </div>
+        </div>
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">正在加载桃花源...</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 音频元素 -->
+    <audio id="bgm" loop></audio>
+    <audio id="sfx" preload="auto"></audio>
+    
+    <script src="main.js"></script>
+</body>
+</html>

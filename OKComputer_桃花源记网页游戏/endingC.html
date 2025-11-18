@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桃花源记 - 疑窦丛生</title>
+    <link rel="stylesheet" href="styles/ending.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="ending-c">
+    <div class="ending-container">
+        <div class="ending-background"></div>
+        
+        <div class="ending-content">
+            <div class="ending-header">
+                <h1 class="ending-title">疑窦丛生，执念成疾</h1>
+                <div class="ending-subtitle">Branch C - The Path of Suspicion</div>
+            </div>
+            
+            <div class="ending-scene">
+                <div class="scene-image">
+                    <img src="resources/endingC_death.png" alt="临终的枯桃树下" class="scene-img">
+                </div>
+                
+                <div class="scene-narration">
+                    <p class="narration-text">
+                        渔人拒绝承诺，趁夜观察村落——村民深夜仍重复耕作、织布动作，眼神空洞，村长独自在溶洞入口喃喃"凡心有疑者，不得久留"。
+                    </p>
+                    
+                    <p class="narration-text">
+                        渔人惊恐之下连夜逃离，回家后日夜被"诡异桃源"的幻象折磨，变卖家产多次寻找，却始终找不到桃林与溶洞。最终在溪边一棵枯桃树下病倒。
+                    </p>
+                    
+                    <p class="narration-text">
+                        临终之际，他咳出一口鲜血，染红了手边的枯萎桃花瓣，喃喃"原来......从未有过真正的桃源"。
+                    </p>
+                </div>
+                
+                <div class="scene-dialogue">
+                    <div class="dialogue-box dark">
+                        <p class="dialogue-text">
+                            乱世之人，不信圆满，执念成魔。桃源本是心之寄托，疑窦丛生之日，便是自困牢笼之时。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ending-message">
+                <div class="message-box dark">
+                    <h2>疑者，终困于己。</h2>
+                    <p>怀疑是一把双刃剑，过度的疑虑会将人困在自己构建的牢笼中。</p>
+                </div>
+            </div>
+            
+            <div class="ending-controls">
+                <button class="btn btn-primary" onclick="restartGame()">重新开始</button>
+                <button class="btn btn-secondary" onclick="backToTitle()">返回标题</button>
+            </div>
+        </div>
+        
+        <div class="ending-effects">
+            <div class="dark-fog"></div>
+            <div class="dark-fog"></div>
+            <div class="dark-fog"></div>
+            <div class="dark-fog"></div>
+            <div class="dark-fog"></div>
+        </div>
+    </div>
+    
+    <script>
+        function restartGame() {
+            window.location.href = 'index.html';
+        }
+        
+        function backToTitle() {
+            window.location.href = 'index.html';
+        }
+        
+        // 添加阴雾效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const fogs = document.querySelectorAll('.dark-fog');
+            fogs.forEach((fog, index) => {
+                fog.style.animationDelay = `${index * 1}s`;
+                fog.style.left = `${Math.random() * 100}%`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Hub - 聚合全球主流AI工具</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background: #f8f9fa;
+      color: #212529;
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+      padding: 40px 20px;
+    }
+
+    body.dark {
+      background: #121212;
+      color: #e9ecef;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #6a5acd, #9b59b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.subtitle {
+      color: #6c757d;
+      font-size: 1.1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 24px;
+      padding: 0 10px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px 16px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 0 8px;
+    }
+
+    body.dark .card {
+      background: #1e1e1e;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+
+    button.theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #6a5acd;
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+
+  <div class="container">
+    <header>
+      <h1>AI Hub</h1>
+      <p class="subtitle">聚合全球主流AI工具，一键直达</p>
+    </header>
+
+    <div class="grid">
+      <div class="card" onclick="openLink('https://www.doubao.com')">
+        <img src="https://lf-dp-fe-sign.cdn.bcebos.com/obj/ark-agent-platform/doubao-logo.svg" alt="豆包">
+        <p>豆包</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://yiyan.baidu.com')">
+        <img src="https://yiyan.baidu.com/img/logo.1e1f8d10.svg" alt="文心一言">
+        <p>文心一言</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://tongyi.aliyun.com')">
+        <img src="https://img.alicdn.com/imgextra/i4/O1CN01v1ZyLc1fXqX9KkYdG_!!6000000004099-55-tps-120-120.svg" alt="通义千问">
+        <p>通义千问</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://chatglm.cn')">
+        <img src="https://chatglm.cn/chatglm/icons/favicon-96x96.png" alt="智谱清言">
+        <p>智谱清言</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://xinghuo.xfyun.cn/app')">
+        <img src="https://www.xfyun.cn/src/images/logo/xinghuo-h5.png" alt="讯飞星火">
+        <p>讯飞星火</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://kimi.moonshot.cn')">
+        <img src="https://kimi.moonshot.cn/static/logo.png" alt="Kimi Chat">
+        <p>Kimi Chat</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://yuanbao.tencent.com')">
+        <img src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/midpage/logo_tencent.png" alt="腾讯元宝">
+        <p>腾讯元宝</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://www.deepseek.com')">
+        <img src="https://www.deepseek.com/favicon.ico" alt="DeepSeek">
+        <p>DeepSeek</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://metaso.cn')">
+        <img src="https://metaso.cn/favicon.ico" alt="秘塔AI搜索">
+        <p>秘塔AI搜索</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://chat.minimaxi.com')">
+        <img src="https://chat.minimaxi.com/favicon.ico" alt="MiniMax AI">
+        <p>MiniMax AI</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://bot.n.cn/chathome')">
+        <img src="https://bot.n.cn/favicon.ico" alt="纳米AI">
+        <p>纳米AI</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://yige.baidu.com')">
+        <img src="https://yige.baidu.com/static/images/favicon.ico" alt="文心一格">
+        <p>文心一格</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://wanxiang.aliyun.com')">
+        <img src="https://wanxiang.aliyun.com/favicon.ico" alt="通义万相">
+        <p>通义万相</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://www.tiamat.ai')">
+        <img src="https://www.tiamat.ai/favicon.ico" alt="TIAMAT">
+        <p>TIAMAT</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://chat.openai.com')">
+        <img src="https://chat.openai.com/favicon.ico" alt="ChatGPT">
+        <p>ChatGPT</p>
+      </div>
+
+      <div class="card" onclick="openLink('https://gemini.google.com/app')">
+        <img src="https://gemini.google.com/app/images/favicon.ico" alt="Gemini">
+        <p>Gemini</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2025 AI Hub. 所有链接跳转至第三方官网，本站不存储任何内容。</p>
+    </footer>
+  </div>
+
+  <script>
+    function openLink(url) {
+      window.open(url, '_blank');
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
